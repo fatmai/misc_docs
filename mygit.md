@@ -139,6 +139,30 @@ I changed the github repository "music.features" under the user *fatmai* to be u
 	$ git pull
 	~~~ 
 
+### A solution to "Your branch is X commits ahead"
+
+Scenario: You made changes in your local master copy but did not push them.
+(You can compare the git logs between your local and remote branch to see what 
+has not been commited.) There are different solutions:
+
+- If you want to keep these commits, you can push your local changes to the
+  remote repository:
+
+	~~~ 
+    $ git push origin assuming origin is your remote
+	~~~ 
+
+- If you don't want to keep these changes then remove them or reset your local master
+to the state on remote by doing:
+
+	~~~ 
+    $ git reset --hard origin/master
+	~~~ 
+
+How to avoid this message in the future:
+
+- In general your remote master repository should be the clean repository and
+  the local master repository a copy of the remote one.
 
 
 ### DEALING WITH SWC Pull requests
