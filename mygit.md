@@ -44,15 +44,15 @@ git stash save --keep-index
 
 1. Fork a repository (e.g. *music.features* from the *gallantlab* organization into *fatmai/music.features*)
 
-2. Create a new branch for each logically connected work unit you will change
+3. Create a new branch for each logically connected work unit you will change
 
 	~~~
 	git checkout -b <branch-name>
 	~~~
 
-3. Do whatever changes you want to make in this branch. Make several commits.
+4. Do whatever changes you want to make in this branch. Make several commits.
 
-4. Push all the changes to your github repository e.g. *fatmai* 
+5. Push all the changes to your github repository e.g. *fatmai* 
 
 	~~~
 	git push fatmai <branch-name>
@@ -164,6 +164,28 @@ How to avoid this message in the future:
 - In general your remote master repository should be the clean repository and
   the local master repository a copy of the remote one.
 
+### DEALING WITH Reference has invalid format 'refs/heads/master'
+
+Schenario: This is usually caused when you are using a cloud service (e.g. dropbox) to store your data.
+
+The solution is from this [stackoverflow link](http://stackoverflow.com/questions/12773488/git-fatal-reference-has-invalid-format-refs-heads-master)
+
+- Go to your repo	
+
+	~~~ 
+    $ cd my_repo
+	~~~ 
+	
+- Search for the conflicted files and delete them	
+	
+	~~~ 
+    $ find . -type f -name "* conflicted copy*" -exec rm -f {} \;
+	~~~ 
+- Remove all "conflicted" references from git's packed-refs file	
+	
+	~~~ 
+	$ awk '!/conflicted/' .git/packed-refs > temp && mv temp .git/packed-refs
+	~~~ 
 
 ### DEALING WITH SWC Pull requests
 
