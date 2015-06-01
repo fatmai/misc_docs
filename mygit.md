@@ -60,7 +60,31 @@ git stash save --keep-index
 
 **CAUTION**
 
-<Everything that can go wrong should come here.>
+
+*Everything that can go wrong should come here.*
+
+
+### Sync a fork
+
+1. Fetch the branches and their commits from the upstream. 
+
+	~~~
+	git fetch upstream
+	~~~
+	
+2. Checkout your fork's local master branch
+
+	~~~
+	git checkout master
+	~~~
+	
+3. Bring your fork's master branch into sync with the upstream repository. Merge changes from upstream/master into your local master branch.
+
+	~~~
+	git merge upstream/master
+	~~~
+
+
 
 
 
