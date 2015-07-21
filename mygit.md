@@ -65,7 +65,7 @@ git stash save --keep-index
 
 *Everything that can go wrong should come here.*
 
-### Examine a pull request withour merging it
+### Examine a pull request without merging it
 
 1. Remote add the repository if not yet done.
 
