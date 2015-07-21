@@ -44,27 +44,58 @@ git stash save --keep-index
 
 1. Fork a repository (e.g. *music.features* from the *gallantlab* organization into *fatmai/music.features*)
 
-3. Create a new branch for each logically connected work unit you will change
+2. Create a new branch for each logically connected work unit you will change
 
 	~~~
 	git checkout -b <branch-name>
 	~~~
 
-4. Do whatever changes you want to make in this branch. Make several commits.
+3. Do whatever changes you want to make in this branch. Make several commits.
 
-5. Push all the changes to your github repository e.g. *fatmai* 
+4. Push all the changes to your github repository e.g. *fatmai* 
 
 	~~~
 	git push fatmai <branch-name>
 	~~~
+
+5. Make a pull request on github
 
 **CAUTION**
 
 
 *Everything that can go wrong should come here.*
 
+### Examine a pull request withour merging it
 
-### Sync a fork
+1. Remote add the repository if not yet done.
+
+	~~~
+	git remote add fatmai  https://github.com/fatmai/music.features.git
+	~~~
+
+
+2. Fetch all data (don't merge!)
+
+	~~~
+	git fetch fatmai
+	~~~
+
+3. Check if fetch worked
+
+	~~~
+	git branch -v -a
+	~~~
+
+4. Checkout the remote repositories branch
+
+	~~~
+	git checkout fatmai/branchname
+	~~~
+
+
+
+
+### Sync a fork with the upstream
 
 1. Fetch the branches and their commits from the upstream. 
 
