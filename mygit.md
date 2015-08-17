@@ -259,7 +259,7 @@ The solution is from this [stackoverflow link](http://stackoverflow.com/question
 * Add remote upstream swcarpentery/shell-novice branch
 
 	~~~ 
-	git remote add upstream https://github.com/wcarpentry/shell-novice.git
+	git remote add upstream https://github.com/swcarpentry/shell-novice.git
 	~~~ 
 
 * Now you should be able to see https://github.com/swcarpentry/shell-novice.git as upstream when you do 
@@ -293,4 +293,66 @@ The solution is from this [stackoverflow link](http://stackoverflow.com/question
 	~~~ 
 	
  	==> Now when you go on github the open issue will be gone. So if there are many comments to one issue, first clean everything. make commits to each separately and then when you have finalized push it to the origin branch. 
+ 	
+
+### Creating/adding a new SWC lesson for a workshop
+
+* Fork the SWC workshop github page (e.g. the workshop 2015-08-16-ucdavis-wise) in your github
+
+* Clone your forked version of the SWC workshop github page (e.g. the workshop 2015-08-16-ucdavis-wise)
+
+	~~~ 
+	git clone https://github.com/fatmai/2015-08-16-ucdavis-wise
+	~~~ 
+
+* Create your own change-whatever branch
+
+	~~~ 
+	git checkot -b change-whatever
+	~~~ 
+
+* Check what remote branches you have access
+
+	~~~ 
+	git remote -v
+	~~~ 
+
+* Add remote upstream workshop repository
+
+	~~~ 
+	git remote add upstream https://github.com/camillescott/2015-08-16-ucdavis-wise.git
+	~~~ 
+
+* Now you should be able to see the workshop repository as upstream when you do 
+	
+	~~~ 
+	git remote -v
+	~~~
+
+* Pull changes from the workshop repository, which is your upstream. You want to be up-to-date before moving forward.
+	
+	~~~ 
+	git pull upstream gh-pages
+	~~~ 
+	
+* Make your changes *
+
+	~~~ 
+	vi 06-find.md
+	~~~ 
+
+* Commit your changes. Commit them line by line and push after each commit.
+
+	~~~ 
+	git commit -am "New excercise added."
+	~~~ 
+
+* Push to origin branch gh-pages
+
+	~~~ 
+	git push origin gh-pages
+	~~~ 
+	
+ 	==> Now when you go on your own github you will have an option to create a Pull request against the workshop repository. Push that button to create a Pull request and wait for the lead instructor to merge it.
+
 
